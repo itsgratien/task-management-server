@@ -36,3 +36,10 @@ export interface TaskDTO
 export interface SingleTaskDTOParam {
   taskId: string;
 }
+
+export interface UpdateTaskDTO
+  extends Pick<TaskDTO, 'title' | 'startDate' | 'endDate' | 'priority'> {
+  assignees: Pick<Assignee, 'assigneeId' | 'name'>[];
+  projects: Pick<Project, 'name' | 'url' | 'projectId'>[];
+  attachments: Pick<Attachment, 'name' | 'url' | 'attachmentId'>[];
+}

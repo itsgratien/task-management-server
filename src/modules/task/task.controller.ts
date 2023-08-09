@@ -7,11 +7,17 @@ import {
   assigneeRepository,
   attachementRepository
 } from '../../databases/sequelize';
-import { TaskDTO, SingleTaskDTOParam } from '../../types';
+import { TaskDTO, SingleTaskDTOParam, UpdateTaskDTO } from '../../types';
 import { omit } from 'lodash';
 import { Op } from 'sequelize';
+import { TaskHelper } from './task.helper';
 
 export class TaskController {
+  private taskHelper: TaskHelper;
+
+  constructor() {
+    this.taskHelper = new TaskHelper();
+  }
   /**
    *
    * @param req
@@ -27,7 +33,9 @@ export class TaskController {
     try {
       const setup = await taskRepository.create({
         ...omit(req.body, ['projects', 'attachments', 'assignees']),
-        userId: req.user.id
+        userId: req.user.id,
+        startDate: new Date(req.body.startDate).toDateString(),
+        endDate: new Date(req.body.endDate).toDateString()
       });
 
       // push projects into projects table
@@ -158,6 +166,61 @@ export class TaskController {
         res,
         status: httpCode.OK,
         message: 'Deleted successful'
+      });
+    } catch (error) {
+      return next(error);
+    }
+  };
+
+  /**
+   *
+   * @param req
+   * @param res
+   * @param next
+   * @update single tasks
+   */
+  public updateTask = async (
+    req: Request<SingleTaskDTOParam, any, UpdateTaskDTO>,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const find = await taskRepository.findByPk(req.params.taskId);
+
+      if (!find) {
+        return responseWrapper({
+          res,
+          status: httpCode.NOT_FOUND,
+          message: 'Task not found'
+        });
+      }
+
+      await taskRepository.update(
+        {
+          ...omit(req.body, ['projects', 'attachments', 'assignees']),
+          startDate: new Date(req.body.startDate).toDateString(),
+          endDate: new Date(req.body.endDate).toDateString()
+        },
+        {
+          where: {
+            [Op.and]: [{ taskId: req.params.taskId }, { userId: req.user.id }]
+          }
+        }
+      );
+
+      // update projects
+      await this.taskHelper.updateProjects(req.body.projects);
+
+      // update attachment
+      await this.taskHelper.updateAttachment(req.body.attachments);
+
+      // update assignees
+      await this.taskHelper.updateAssignees(req.body.assignees);
+
+      return responseWrapper({
+        res,
+        status: httpCode.OK,
+        message: 'updated successful'
       });
     } catch (error) {
       return next(error);

@@ -17,6 +17,13 @@
             "containerId": "",
             "created": "2023-08-09T09:54:23.125Z",
             "sortNum": 20000
+        },
+        {
+            "_id": "4dfaae6a-1e4d-4296-a517-c39c832f093b",
+            "name": "Task",
+            "containerId": "",
+            "created": "2023-08-09T12:36:20.347Z",
+            "sortNum": 30000
         }
     ],
     "requests": [
@@ -48,12 +55,12 @@
             "method": "POST",
             "sortNum": 30000,
             "created": "2023-08-09T09:42:57.663Z",
-            "modified": "2023-08-09T09:44:53.156Z",
+            "modified": "2023-08-09T12:54:54.361Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"email\":\"gratientuyishimire@gmail.com\",\n  \"password\": \"hacker@12\",\n  \"username\": \"itsgratien\"\n}",
+                "raw": "{\n  \"email\":\"gtuyishimire@gmail.com\",\n  \"password\": \"hacker@12\",\n  \"username\": \"gtuyishimire\"\n}",
                 "form": []
             },
             "tests": []
@@ -70,6 +77,72 @@
             "modified": "2023-08-09T09:54:40.035Z",
             "headers": [],
             "params": [],
+            "tests": []
+        },
+        {
+            "_id": "bafdb710-04d3-4ede-aa85-2de4f025b142",
+            "colId": "d66520a6-bc4d-4f23-b0dc-b2ae84689bb4",
+            "containerId": "4dfaae6a-1e4d-4296-a517-c39c832f093b",
+            "name": "Create Task",
+            "url": "{{baseUrl}}/tasks",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-08-09T12:36:27.607Z",
+            "modified": "2023-08-09T13:11:32.339Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"this is title\",\n  \"startDate\": \"2022-05-05\",\n  \"endDate\": \"2022-05-20\",\n  \"description\": \"This is description\",\n  \"priority\":\"Low\",\n  \"attachments\": [{\"url\": \"https://igihe.com\"}],\n  \"assignees\": [\"gratien\"],\n  \"projects\": [{\"name\": \"qt global\", \"url\": \"https://igihe.com\"}]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f4589daf-c0f8-4ab8-99b2-2f73ff859092",
+            "colId": "d66520a6-bc4d-4f23-b0dc-b2ae84689bb4",
+            "containerId": "4dfaae6a-1e4d-4296-a517-c39c832f093b",
+            "name": "Get Tasks",
+            "url": "{{baseUrl}}/tasks",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-08-09T13:02:29.594Z",
+            "modified": "2023-08-09T13:02:36.555Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cc0f9a9a-6e48-4a3d-b74a-c641613f96d5",
+            "colId": "d66520a6-bc4d-4f23-b0dc-b2ae84689bb4",
+            "containerId": "4dfaae6a-1e4d-4296-a517-c39c832f093b",
+            "name": "Get Single Task",
+            "url": "{{baseUrl}}/tasks/0fbc5f43-d7dc-41e8-9c85-47238301c887",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2023-08-09T13:03:37.233Z",
+            "modified": "2023-08-09T13:05:19.590Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "89c2d67d-9237-47d7-b956-0c5864fc41df",
+            "colId": "d66520a6-bc4d-4f23-b0dc-b2ae84689bb4",
+            "containerId": "4dfaae6a-1e4d-4296-a517-c39c832f093b",
+            "name": "Update Task",
+            "url": "{{baseUrl}}/tasks/0fbc5f43-d7dc-41e8-9c85-47238301c887",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2023-08-09T13:05:14.617Z",
+            "modified": "2023-08-09T13:13:25.375Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"this is title\",\n  \"startDate\": \"2022-05-05\",\n  \"endDate\": \"2022-05-20\",\n  \"description\": \"This is description\",\n  \"priority\": \"Normal\",\n  \"attachments\": [\n    {\n      \"url\": \"https://abana.com\",\n      \"attachmentId\": \"9b50cf95-b98f-49f1-a821-40498cf90f14\"\n    }\n  ],\n  \"assignees\": [\n    {\n      \"name\": \"mukama\",\n      \"assigneeId\": \"7dff9621-acad-4b9d-890f-cfa5389f185d\"\n    }\n  ],\n  \"projects\": [\n    {\n      \"name\": \"Irembo\",\n      \"url\": \"https://igihe.com\",\n      \"projectId\": \"2ca74868-7ed2-4e18-83c7-d0d93ce25d9a\"\n    }\n  ]\n}",
+                "form": []
+            },
             "tests": []
         }
     ]

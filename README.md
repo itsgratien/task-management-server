@@ -1,6 +1,6 @@
-# express app boilerplate
+# QYT Task Management
 
-express app boilerplate
+Task Management Application
 
 ## Prerequisites
 
@@ -14,12 +14,16 @@ Make sure you have the following tools installed in your PC.
 ## How to start a server (Locally)?
 
 - Clone this repo & open project in your vscode editor (or any editor of your choice)
-- Create new environment variables in your `.bashrc`
-- In Your `.bashrc` add the following environment variables
+- Create new environment variables in your `.env`
+- In Your `.env` add the following environment variables
 
 ```sh
-export UPG_DATABASE_URI=postgres://postgres:user:pass@localhost:5432/payment
-export UPG_TEST_DATABASE_URI=postgres://user:pass@localhost:5432/payment_test
+DATABASE_URI="postgres://postgres:gramdb@localhost:5432/qt"
+REDIS_HOST=localhost
+REDIS_PORT=6379
+REDIS_PASSWORD="yourredispassword"
+SECRET_KEY="your secretKey"
+
 ```
 
 - Then run `source ~/.bashrc`
