@@ -1,0 +1,38 @@
+components:
+  schemas:
+    RegisterResponse:
+      type: object
+      properties:
+        name:
+          type: string
+        id:
+          type: string
+paths:
+  /api/v1/users:
+    post:
+      description: Register A User
+      parameters:
+        - in: body
+          name: name
+          schema:
+            type: string
+          required: true
+
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: number
+                    example: 201
+                  timestamps:
+                    type: number
+                    example: 1010101010
+                  message:
+                    type: string
+                  data:
+                    $ref: '#/components/schemas/RegisterResponse'

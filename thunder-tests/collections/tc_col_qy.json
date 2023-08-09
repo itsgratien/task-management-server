@@ -1,0 +1,76 @@
+{
+    "_id": "d66520a6-bc4d-4f23-b0dc-b2ae84689bb4",
+    "colName": "QY",
+    "created": "2023-08-09T09:23:52.912Z",
+    "sortNum": 10000,
+    "folders": [
+        {
+            "_id": "1bc87592-6aad-4985-9f00-3c2752428875",
+            "name": "Auth",
+            "containerId": "",
+            "created": "2023-08-09T09:24:40.921Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "47d5c477-0720-4248-b2e0-5dacc1d68870",
+            "name": "Users",
+            "containerId": "",
+            "created": "2023-08-09T09:54:23.125Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "cc8cf89a-174d-44c6-8f16-ac8bfedb475a",
+            "colId": "d66520a6-bc4d-4f23-b0dc-b2ae84689bb4",
+            "containerId": "1bc87592-6aad-4985-9f00-3c2752428875",
+            "name": "Login",
+            "url": "{{baseUrl}}/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-08-09T09:24:45.473Z",
+            "modified": "2023-08-09T09:45:09.870Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"gratientuyishimire@gmail.com\",\n  \"password\": \"hacker@12\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7130ab7a-ceaf-48f8-ba6b-f7e6794d57fc",
+            "colId": "d66520a6-bc4d-4f23-b0dc-b2ae84689bb4",
+            "containerId": "1bc87592-6aad-4985-9f00-3c2752428875",
+            "name": "Signup",
+            "url": "{{baseUrl}}/auth/signup",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-08-09T09:42:57.663Z",
+            "modified": "2023-08-09T09:44:53.156Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"gratientuyishimire@gmail.com\",\n  \"password\": \"hacker@12\",\n  \"username\": \"itsgratien\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "eb6f1b1b-f37e-4925-b5d7-5e2ec4a5c387",
+            "colId": "d66520a6-bc4d-4f23-b0dc-b2ae84689bb4",
+            "containerId": "47d5c477-0720-4248-b2e0-5dacc1d68870",
+            "name": "me",
+            "url": "{{baseUrl}}/users/me",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-08-09T09:54:29.606Z",
+            "modified": "2023-08-09T09:54:40.035Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

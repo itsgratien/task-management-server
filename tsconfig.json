@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "rootDir": ".",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    /* Type Checking */
+    "strict": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "typeRoots": ["./src/types", "node_modules/@types"],
+    "allowJs": true,
+    "incremental": true
+  },
+  "exclude": ["node_modules"],
+  "watchOptions": {
+    "excludeDirectories": ["node_modules"],
+    "excludeFiles": ["node_modules"]
+  }
+}

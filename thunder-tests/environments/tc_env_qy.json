@@ -1,0 +1,14 @@
+{
+    "_id": "b224ba12-3aaa-4b69-bb72-b24430d4d354",
+    "name": "QY",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2023-08-09T09:24:00.889Z",
+    "modified": "2023-08-09T09:24:00.889Z",
+    "data": [
+        {
+            "name": "baseUrl",
+            "value": "http://localhost:4000/api"
+        }
+    ]
+}

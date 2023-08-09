@@ -1,0 +1,16 @@
+{
+  "app": {
+    "secretKey": "SECRET_KEY",
+    "database": {
+      "uri": "DATABASE_URI"
+    },
+    "redis": {
+      "port": "REDIS_PORT",
+      "host": "REDIS_HOST",
+      "password": "REDIS_PASSWORD"
+    },
+    "session": {
+      "name": "qy"
+    }
+  }
+}
