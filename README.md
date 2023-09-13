@@ -6,7 +6,7 @@ Task Management Application
 
 Make sure you have the following tools installed in your PC.
 
-- [NodeJS V16](https://nodejs.org)
+- [NodeJS V18](https://nodejs.org)
 - [Postgresql](https://www.postgresql.org/download/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Yarn](https://yarnpkg.com/getting-started/install)
@@ -26,10 +26,8 @@ SECRET_KEY="your secretKey"
 
 ```
 
-- Then run `source ~/.bashrc`
-
-- After In your terminal, inside project directory run `yarn install`
-- And run `yarn dev` to start your local server
+- In your terminal, inside project directory run `yarn install`
+- Run `yarn dev` to start your local server
 
 ## API Documentation
 
